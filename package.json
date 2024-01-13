@@ -1,0 +1,13 @@
+{
+  "name": "AM_FCM_qa_technical_challenge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Alejandro Marquino",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^13.6.2"
+  },
+  "scripts": {
+    "cypress": "npx cypress open"
+  }
+}
