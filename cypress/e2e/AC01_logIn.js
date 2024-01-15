@@ -29,7 +29,4 @@ describe('AC01 Log in Tests', () => {
     homeScreenPage.actionLogin('performance_glitch_user');
     productsPage.verifyLogIn();
   });
-  after(() => {
-     
-  });
 });
