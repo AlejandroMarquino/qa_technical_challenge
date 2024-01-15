@@ -40,6 +40,7 @@ Information (text box)
 Accepted usernames
 Password for all users
 
+
 	** Products Page (https://www.saucedemo.com/inventory.html) **
 Hamburger icon (top-left corner)
 Close icon
@@ -77,7 +78,6 @@ Copyright Text (footer)
 
 
 	** Product Detail Page (https://www.saucedemo.com/inventory-item.html?id=X) **
-
 Common elements: Hamburger, Swat Labs, Cart, Social Links, Copy text
 
 Back to products (back arrow icon) 
@@ -103,8 +103,8 @@ Remove (button)
 Continue Shopping (button > redirects to Inventory Page)
 Checkout (button > redirects to Checkout page)
 
-	** Checkout Information User Page (https://www.saucedemo.com/checkout-step-one.html) **
 
+	** Checkout Information User Page (https://www.saucedemo.com/checkout-step-one.html) **
 Common elements: Hamburger, Swat Labs, Cart, Social Links, Copy text
 
 User Information box
@@ -117,7 +117,6 @@ Continue (button > redirects to Checkout Page Step Two)
 
 
 	** Checkout Overwiev Page (https://www.saucedemo.com/checkout-step-two.html) **
-
 Checkout: Overview
 QTY
 Drescription
@@ -140,7 +139,6 @@ Continue (button > redirects to Checkout-complete)
 
 
 	** Checkout Confirmation Page (https://www.saucedemo.com/checkout-complete.html) **
-
 Green Check Icon
 Text:
 Thank you for your order!
@@ -152,6 +150,7 @@ Back Home (button > redirects to Home Screen Page)
 Privacy Policy in the footer - Missing Link 
 Reset App State after adding a product to cart cellars the cart but the button ‘Remove’ against the product stays
 The user can proceed to checkout step one page without a product
+
 
 	** Questions to PM or dev team:	**
 What is the session timeout for logging out?
