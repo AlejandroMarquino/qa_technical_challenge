@@ -40,7 +40,7 @@ Information (text box)
 Accepted usernames
 Password for all users
 
-	** Products Page (https://www.saucedemo.com/inventory.html)	**
+	** Products Page (https://www.saucedemo.com/inventory.html) **
 Hamburger icon (top-left corner)
 Close icon
 All Items (Inventory)
@@ -76,7 +76,7 @@ LinkedIn (redirects to https://www.linkedin.com/company/sauce-labs/)
 Copyright Text (footer)
 
 
-	**Product Detail Page (https://www.saucedemo.com/inventory-item.html?id=X)	**
+	**Product Detail Page (https://www.saucedemo.com/inventory-item.html?id=X) **
 
 Common elements: Hamburger, Swat Labs, Cart, Social Links, Copy text
 
@@ -103,7 +103,7 @@ Remove (button)
 Continue Shopping (button > redirects to Inventory Page)
 Checkout (button > redirects to Checkout page)
 
-	**Checkout Information User Page (https://www.saucedemo.com/checkout-step-one.html)	**
+	** Checkout Information User Page (https://www.saucedemo.com/checkout-step-one.html) **
 
 Common elements: Hamburger, Swat Labs, Cart, Social Links, Copy text
 
@@ -116,7 +116,7 @@ Cancel (button > redirects to Cart Page)
 Continue (button > redirects to Checkout Page Step Two) 
 
 
-	**Checkout Overwiev Page (https://www.saucedemo.com/checkout-step-two.html)	**
+	** Checkout Overwiev Page (https://www.saucedemo.com/checkout-step-two.html) **
 
 Checkout: Overview
 QTY
@@ -139,7 +139,7 @@ Cancel (button > redirects to Inventory Page)
 Continue (button > redirects to Checkout-complete) 
 
 
-	**Checkout Confirmation Page (https://www.saucedemo.com/checkout-complete.html)	**
+	** Checkout Confirmation Page (https://www.saucedemo.com/checkout-complete.html) **
 
 Green Check Icon
 Text: 
@@ -148,12 +148,12 @@ Your order has been dispatched, and will arrive just as fast as the pony can get
 Back Home (button > redirects to Home Screen Page)
 
 
-	**BUGS:	**
+	** BUGS: **
 Privacy Policy in the footer - Missing Link 
 Reset App State after adding a product to cart cellars the cart but the button ‘Remove’ against the product stays
 The user can proceed to checkout step one page without a product
 
-	**Questions to PM or dev team:	**
+	** Questions to PM or dev team:	**
 What is the session timeout for logging out?
 
  ```
