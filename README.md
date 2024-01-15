@@ -544,9 +544,9 @@ Go to the repository folder
 yarn > install dependencies
 
 # How to Run the Tests
-To run Cypress use the comand: `yarn cypress`
-When Cypress runs, select the browser (in my case, Chrome).
-Access the Specs menu.
+To run Cypress use the comand: `yarn cypress` > 
+When Cypress runs, select the browser (in my case, Chrome). > 
+Access the Specs menu. > 
 Run the test.
 
 
