@@ -76,7 +76,7 @@ LinkedIn (redirects to https://www.linkedin.com/company/sauce-labs/)
 Copyright Text (footer)
 
 
-	**Product Detail Page (https://www.saucedemo.com/inventory-item.html?id=X) **
+	** Product Detail Page (https://www.saucedemo.com/inventory-item.html?id=X) **
 
 Common elements: Hamburger, Swat Labs, Cart, Social Links, Copy text
 
@@ -142,7 +142,7 @@ Continue (button > redirects to Checkout-complete)
 	** Checkout Confirmation Page (https://www.saucedemo.com/checkout-complete.html) **
 
 Green Check Icon
-Text: 
+Text:
 Thank you for your order!
 Your order has been dispatched, and will arrive just as fast as the pony can get there!
 Back Home (button > redirects to Home Screen Page)
@@ -172,6 +172,68 @@ Ensure the Swag Labs admins are able to:
 4. Log in/Log out to Swag Labs (performance_glitch_user)
 
  ```
+Scenario: Log in / Log out to Swag Labs (standar_user)
+	Given a user
+	And the user is in Home Screen page
+	When the user fills the user name fill with a valid user
+	And the user fills the password with the correct password
+	And the user clicks the Login button
+	Then the user logs in correctly 
+	And the user is redirected to the Products page
+
+
+Scenario: Not logging in to Swat Labs and getting an error (locked_out_user)
+	Given a user
+	And the user is in Home Screen page
+	When the user fills the user name fill with a locked user
+	And the user fills the password with the correct password
+	And the user clicks the Login button
+	Then the user can’t logs in 
+	And a warning message appear
+
+
+Scenario: Log in / Log out to Swat Labs (problem_user)
+	Given a user
+	And the user is in Home Screen page
+	When the user fills the user name fill with the problem_user data
+	And the user fills the password with the correct password
+	And the user clicks the Login button
+	Then the user logs in correctly 
+	And the user is redirected to the Products pager
+
+
+Scenario: Log in / Log out to Swat Labs (performance_glitch_user)
+	Given a user
+	And the user is in Home Screen page
+	When the user fills the user name fill with the performance_glitch_user data
+	And the user fills the password fill with the correct password
+	And the user clicks the Login button
+	Then the user logs in correctly 
+	And the user is redirected to the Products pager
+
+Due to this, we can do the 1, 3, and 4 scenarios with examples to simplify the test case
+
+Scenario: Log in with a available user
+	Given a user
+	And the user is in Home Screen page
+	When the user fills the user name fill with the <user> user
+	And the user fills the password with the correct password
+	And the user clicks the Login button
+	Then the user logs in correctly 
+	And the user is redirected to the Products page
+
+	Examples:
+	| user |
+	| standard_user |
+	| problem_user |
+	| performance_glitch_user |
+
+
+Scenario: Log out when the user is logged in.
+	Given a user
+	And the user is logs in 
+	When the user logs out
+	Then the user is redirected to Home Screen page
 
  ```
 
@@ -185,6 +247,18 @@ Ensure the Swag Labs standard_user are able to:
 3. Able to access to the products details view
 
  ```
+Scenario: User can access to the Product page
+	Given a user
+	And the user is logs in 
+	And the user is in the Products page
+	And the products are displayed 
+	When the user clicks on the |element|
+	Then the Product Detail page is displayed
+
+	Examples:	
+	| element |
+	| name of the product |
+	| image of the product |
 
  ```
 
@@ -201,6 +275,18 @@ Ensure the Swag Labs standard_user are able to:
 
  ```
 
+Scenario: User can add products to the cart	
+	Given a user
+	And the user is logs in 
+	And the user is in the |page| page
+	When the user clicks on the Add to cart button of one product
+	Then the product is added to the cart
+	And the user can see the product in the Cart Detail page
+
+	Examples:
+	|page|
+	|Products page|
+	|Product Detail page|
  ```
 
 ## User Story 4
@@ -218,6 +304,21 @@ Ensure the Swag Labs standard_user are able to:
 7. Able to remove product(s)
 
  ```
+Scenario: User can remove a product from the cart
+	Given a user
+	And the user is logs in 
+	And the user is in the |page| page 
+	And the user has at least one product in the cart
+	When the user clicks on the Remove button
+	Then the product disappear from the Cart Page
+	And the number in the cart icon decrease one number
+	And the number indicates the correct number of products in the cart
+
+	Examples:
+	|page|
+	|Products page|
+	|Product detail page|
+	|Cart detail page|
 
  ```
 
@@ -231,6 +332,38 @@ Ensure the Swag Labs standard_user are able to:
 3. Able to sort product(s) in different ways
 
  ```
+Scenario: User can see the filters menu
+	Given a user
+	And the user is logs in 
+	And the user is in the Products page
+	And the products are displayed 
+	When the user clicks in the Sort Dropdown Menu
+	Then the sort menu is displayed
+	And the |filter| filter is displayed
+
+	Examples:
+	|filter|
+	|Name (A to Z)|
+	|Name (Z to A)|
+	|Price (low to high)|
+	|Price (high to low)|
+
+
+Scenario: User can sort products by filter
+	Given a user
+	And the user is logs in 
+	And the user is in the Products page
+	And the products are displayed 
+	When the user clicks in the Sort Dropdown Menu
+	And the user selects the |filter| filter
+	Then the products are displayed ordered correctly
+
+	Examples:
+	|filter|
+	|Name (A to Z)|
+	|Name (Z to A)|
+	|Price (low to high)|
+	|Price (high to low)|
 
  ```
 
@@ -244,6 +377,20 @@ Ensure the Swag Labs standard_user are able to:
 3. Able to reset app state
 
  ```
+Scenario: User can see the Reset App State Button 
+	Given a user
+	And the user is logs in 
+	When the user clicks on the Hamburger menu
+	Then the Reset App State button appears
+
+
+Scenario: User can reset the App
+	Given a user
+	And the user is logs in 
+	And the user clicks on the Hamburger menu
+	And the user clicks on Reset App State button
+	Then the cart is empty
+	And no number is displayed in the cart icon
 
  ```
 
@@ -259,6 +406,22 @@ Ensure the Swag Labs standard_user are able to:
 5. Able to see all the product information (image, title, description, price)
 
  ```
+Scenario: User can see the information of a product
+	Given a user
+	And the user is logs in 
+	And the user is in the Products Details page
+	And the products are displayed 
+	When the user clicks on the |element|
+	Then the Product Detail page is displayed
+	And the name  is correctly displayed
+	And the image is correctly displayed
+	And the description of the product is correctly displayed
+	And the price is correctly displayed
+
+	Examples:	
+	| element |
+	| name of the product |
+	| image of the product |
 
  ```
 
@@ -276,7 +439,19 @@ Ensure the Swag Labs standard_user are able to:
 7. Able to see the shopping cart with the number of products added
 
  ```
+Scenario: User can see the numbers of products in the cart icon
+	Given a user
+	And the user is logs in 
+	When the user clicks on the Add to cart button of one product
+	Then a number appears in the cart icon
+	And the numbers display the amount of products in the cart 
+	And the cart icon is displayed in the |page| page with de correctly number
 
+	Examples:
+	|page|
+	|Products page|
+	|Product detail page|
+	|Cart detail page|
  ```
 
 ## User Story 9
@@ -287,6 +462,21 @@ Ensure the Swag Labs standard_user are able to:
 1. Log in to Swag Labs
 2. Navigate into the shopping cart
 3. Able to see all the products information what I am going to buy (qty, name, description, price)
+
+ ```
+Scenario: User can see all the details of the products in the Cart Page
+	Given a user
+	And the user is logs in
+	And the user has a product in the cart 
+	When the user are in the Cart Detail page
+	Then the product in de cart are displayed
+	And the Qty is correctly displayed
+	And the name is correctly displayed
+	And the description is correctly displayed
+	And the price is correctly displayed
+
+
+ ```
 
 ## User Story 10
 As a Swag Labs standard_user, I need to buy all the product added to the shopping cart in the Swag Labs ordering platform
@@ -301,7 +491,49 @@ Ensure the Swag Labs standard_user are able to:
 6. Able to see a confirmation page
 
  ```
+Scenario: User can acces to the Chekout page
+	Given a user
+	And the user is logs in
+	And the user has a product in the cart 
+	And the user are in the Cart Detail page
+	When the user clicks on Checkout button
+	Then the Information Checkout User page is displayed
+	
+Scenario: User can acces to the Chekout Overview page
+	Given a user
+	And the user is logs in
+	And the user has a product in the cart 
+	And the user are in the Checkout User page is displayed
+	When the user fills the information
+	And the user clicks on Continue button
+	Then the Information Checkout Overview page is displayed
+	And the Qty is displayed
+	And the name is displayed
+	And the description is displayed
+	And the price is displayed 
+	And the payment information is displayed
+	And the shipping information is displayed
+	And the price total is displayed
+	And the total is displayed
 
+Scenario: User can finish de checkout process
+	Given a user
+	And the user is logs in
+	And the user has a product in the cart 
+	And the user are in the Checkout Overview page is displayed
+	When the clicks on Finish button
+	Then the Checkout Confirmation page is displayed
+	And the message is displayed
+	And the Back Home button is displayed
+
+
+Scenario: User can back to the Products Page from Chekout Confirmation page
+	Given a user
+	And the user is logs in
+	And the user has a product in the cart 
+	And the user are in the Checkout Confirmation page is displayed
+	When the clicks on Back Home button
+	Then the Products page is displayed
  ```
 
 
