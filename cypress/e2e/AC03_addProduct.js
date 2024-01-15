@@ -21,7 +21,4 @@ describe('AC03 Add products to chart', () => {
       productsPage.addAllProductsToCart();
       productsPage.elements.cartBadgeText().should('contain.text', '6');
       });
-      
-    after(() => {
-     });
    });
