@@ -22,6 +22,15 @@ https://www.saucedemo.com
 
 # Analysis of elements and pages
 
+The first step has been to analyze all the components and pages that we are going to have to test and automate. 
+
+This way, I have both an overall and detailed view of the product, as well as the redirects, components, and information that the website displays. (It also allows me to name the elements and pages that I will use when defining the tests.)
+
+This initial analysis, although it requires a time investment, helps in the future to be able to formulate test cases with better definition.
+
+It also enables the detection of some bugs through exploratory means (as described later) or questions that may be raised during a refinement.
+
+
  ```
 	** Home Screen Page (https://www.saucedemo.com)	**
 Username (text field)
