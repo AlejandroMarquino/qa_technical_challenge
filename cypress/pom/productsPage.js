@@ -44,8 +44,7 @@ class productsPage {
     cy.get(`[id="item_${index}_img_link"]`).click();
     productDetailPage.checkDataProduct(index);
     productDetailPage.elements.backButton().click();
- })
-
+    })
  }
 
   sortProducts(order, classOrder){
@@ -57,7 +56,7 @@ class productsPage {
       .then(() =>{
         expect(productList[0]).to.equal(data.productsPage.productsOrder[order].first)
         expect(productList[productList.length-1]).to.equal(data.productsPage.productsOrder[order].last)
-      })
+    })
   }
 
  addAllProductsToCart(){

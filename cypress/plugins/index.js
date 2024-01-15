@@ -1,7 +1,6 @@
 import homeScreenPage from '../pom/homeScreenPage';
 import data from '../fixtures/data.json';
 
-
 class resources {
   LogInPage() {
     cy.clearCookies();

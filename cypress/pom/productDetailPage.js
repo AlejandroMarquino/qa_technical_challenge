@@ -3,8 +3,8 @@ import data from '../fixtures/data.json';
 class productDetailPage {
     elements = {
       backButton:() => cy.get('[data-test="back-to-products"]'),
-      imageProductDetailText:() => cy.get('.inventory_details_img_container > img'),
       nameProductDetailText:() => cy.get('.inventory_details_name'),
+      imageProductDetailText:() => cy.get('.inventory_details_img_container > img'),
       descriptionProductDetailText:() => cy.get('.inventory_details_desc'),
       priceProductDetailText:() => cy.get('.inventory_details_price'),
       addProductToCart:() => cy.get('.btn_inventory'),

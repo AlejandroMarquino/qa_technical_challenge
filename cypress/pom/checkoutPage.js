@@ -42,8 +42,6 @@ class checkoutPage {
     this.elements.orderMessageText().should('contain.text',data.checkoutPage.order_message);
     this.elements.completeImg().should('have.attr', 'alt', data.checkoutPage.alt_image )
   }
-
-
 }
 
 export default new checkoutPage();

@@ -25,10 +25,12 @@
       "password": "secret_sauce"
     }
   },
+  
   "homeScreenPage": {
     "error_locked_out_user_message":"Epic sadface: Sorry, this user has been locked out.",
     "error_wrong_user_password_message":"Epic sadface: Username and password do not match any user in this service"
    },
+
   "productsPage": {
    "title":"Products",
    "cart_products": "1",
