@@ -545,6 +545,14 @@ yarn > install dependencies
 
 # How to Run the Tests
 To run Cypress use the comand: `yarn cypress`
+When Cypress runs, select the browser (in my case, Chrome).
+Access the Specs menu.
+Run the test.
+
+
+https://github.com/AlejandroMarquino/qa_technical_challenge/assets/90139066/d7beedbb-87be-41d8-bd07-5564cbebf675
+
+
 
 # Problems
 The main problem I faced was defining too many tests that later became difficult to implement. I kept them in the test definition because I believe that, even if they are not automated, it's good to have them defined and take them into account. In case of real project, we would have time to evaluate which of these tests are worth automating or which ones to execute manually, and which tests are not necessary.
