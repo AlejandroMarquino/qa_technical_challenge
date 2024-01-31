@@ -1,8 +1,4 @@
-# FCM Digital - QA Technical challenge
-Welcome to the FCM Digital QA team technical challenge, the objective of this challenge is to learn more about the way you work. There is no single solution, so don't worry, just do the best you can. 
-
-## Challenge information
-You will have to create a fork of this repository on which you will work. Once you complete the challenge, you will contact us via email and we will proceed to review it.
+# QA Technical challenge
 
 ## Goals
 Given some user stories witch their acceptance criterias:
